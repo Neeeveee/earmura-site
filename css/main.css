@@ -1,0 +1,993 @@
+/* ✅ 背景视频样式 */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -1;
+}
+
+/* ✅ 页面基础字体与内容层 */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #f5f5f5;
+  overflow-y: scroll;
+  background-color: black; /* 视频加载前的默认背景 */
+}
+
+/* 顶部导航栏整体容器样式 */
+.navbar {
+  height: 100px; /* ✅ 显式设置导航栏高度 */
+  padding: 0 40px; /* 不用上下 padding */
+  background: rgba(0, 0, 0, 0.6);   /* ✅ 防止穿透 */
+  backdrop-filter: blur(4px);      /* ✅ 模糊背景 */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 左侧区域（包含logo和四个导航词） */
+.navbar-left {
+  display: flex; /* 横向排列 */
+  align-items: center; /* 垂直方向居中 */
+}
+
+/* logo区域外层容器 */
+.logo-area {
+  display: flex; /* 横向排列 */
+  align-items: center; /* 垂直方向居中 */
+  margin-right: 100px; /* 与右侧词语保持间距 */
+}
+
+/* logo图片样式 */
+.logo-img {
+  height: 80px; /* logo图片高度为80像素，可按实际需要调整 */
+}
+
+.nav-links {
+  display: flex; /* 确保词条横排 */
+  align-items: flex-start; /* 默认就好，控制不用动 */
+  margin-top: 14px;  /* ✅ 增加这个向下偏移量，可根据效果微调 */
+}
+
+/* 四个导航词条的容器样式 */
+.nav-links a {
+  margin-right: 80px; /* 每个词语右边留20像素间距 */
+  color: #fff; /* 字体颜色为白色 */
+  text-decoration: none; /* 去除下划线 */
+  font-family: 'Jaini', cursive;
+  font-size: 1.2em; /* 字体大小为标准大小 */
+  transition: color 0.3s ease; /* 悬停时颜色渐变 */
+}
+
+/* 鼠标悬停时的样式 */
+.nav-links a:hover {
+  color: #fff290; /* 悬停时字体变为亮黄色 */
+}
+
+
+/* 用户头像图标：略大一点 */
+.navbar-right .user-icon {
+  width: 40px;           /* 用户图标宽度 */
+  height: 40px;          /* 用户图标高度 */
+  margin-right: 20px; /* ✅ 拉开和 logout 图标的距离 */
+  object-fit: contain;   /* 保证缩放时不变形 */
+  vertical-align: middle; /* 垂直中线对齐 */
+}
+
+/* 登出按钮图标：小一点但对齐 */
+.navbar-right .logout-icon {
+  width: 28px;           /* 登出图标宽度 */
+  height: 28px;          /* 登出图标高度 */
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* 公共图标样式 */
+.navbar-right .icon {
+  margin-left: 40px;     /* 图标间距 */
+  display: inline-block;
+  cursor: pointer;       /* 鼠标悬停变成小手 */
+  transition: opacity 0.3s ease; /* 渐变过渡 */
+}
+
+
+/* ✅ 页面主体内容容器 */
+.reverberation-container {
+  max-width: 1160px;
+  margin: 0 auto;  /* ✅ 顶部空出 navbar 高度 */
+  padding: 0px 20px 250px 20px; /* 左右内边距为20px */
+  color: #f5f5f5;
+  font-family: 'EB Garamond', serif;
+}
+
+.reverb-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* 主标题样式 */
+.reverb-title h1 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #fdfdfd;
+  margin-bottom: 10px;
+  font-family: 'EB Garamond', serif;
+}
+
+/* 副标题样式：右对齐 + 斜体 */
+.subtitle-right {
+  text-align: right;
+  font-size: 0.5em;
+  color: #ccc;
+  font-style: italic;
+  line-height: 1.5;
+  font-family: 'EB Garamond', serif;
+}
+
+
+/* Opening Whisper */
+.opening-whisper {
+    margin-top: 100px;
+    text-align: center;         /* ✅ 居中文本 */
+    max-width: 800px;           /* ✅ 控制最大宽度，避免太散 */
+    margin-left: auto;          /* ✅ 水平居中容器 */
+    margin-right: auto;
+}
+.opening-whisper h2 {
+  text-transform: uppercase;
+  color: #ffefa5;
+  font-family: 'EB Garamond', serif;
+}
+.opening-whisper blockquote {
+  line-height: 1.6;
+  color: #eee;
+  margin-top: 10px;
+}
+
+/* 外层布局容器，左右排列两个卡片 */
+.spiritual-ceremony {
+  display: flex;
+  gap: 0px;              /* 左右间距 */
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;        /* 屏幕窄时自动换行 */
+  margin-top: 120px;
+}
+
+/* forcast */
+.forecast-card {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 12px;
+  padding: 32px;
+  margin-top: 60px;
+  margin: 20px ;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  font-family: 'EB Garamond', serif;
+  color: #f5f5f5;
+  flex: 1;
+}
+
+/* 标题与下方紫色内容之间的整体容器 */
+.forecast-header {
+  display: flex;              /* 横向排列标题和图标 */
+  align-items: center;        /* 垂直居中对齐 */
+  gap: 12px;                  /* 标题和图标之间的距离适中 */
+  margin-bottom: 12px;        /* ↓ 将标题与下面图文块的间距缩小 */
+}
+
+/* 主标题文本样式 */
+.forecast-header h3 {
+  font-family: 'EB Garamond', serif;  /* 使用统一字体 */
+  font-size: 1.8em;                    /* 字体大小控制在适度范围 */
+  color: #fceea6;                      /* 字体颜色为淡金 */
+  margin: 0;                           /* 取消多余上下外边距 */
+}
+
+.forecast-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.forecast-main-text {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* forecast-content 总容器：图文并排 */
+.forecast-content {
+  display: flex;                /* 设置横向排列 */
+  align-items: normal;      /* 顶部对齐图文 */
+  gap: 24px;                    /* 左右间距 */
+  margin-top: 10px;
+}
+
+/* 左侧插图样式 */
+.forecast-illustration {
+  width: 120px;                 /* 图片宽度，可根据需要调整 */
+  height: auto;                 /* 高度自动，保持比例 */
+  border-radius: 8px;           /* 圆角风格 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 添加阴影感 */
+}
+
+/* 右侧文字区域 */
+.forecast-text {
+  font-size: 1em;             /* 字体稍大 */
+  line-height: 1.4;             /* 行高舒适 */
+  flex: 1;                      /* 自动填满剩余空间 */
+  font-family: 'EB Garamond', serif; /* 使用 EB Garamond 字体 */
+}
+
+.forecast-details {
+  display: flex;              /* 使用flex布局使列横向排列 */
+  gap: 20px;                  /* 两列之间的间距 */
+  flex-wrap: wrap;           /* 在小屏幕时允许换行 */
+  justify-content: space-between; /* 两列均匀分布 */
+}
+
+/* 左列样式（推荐音效） */
+.forecast-column.left {
+  flex: 1.2;                  /* 占1.2份空间，较窄 */
+  min-width: 180px;          /* 最小宽度 */
+}
+
+/* 右列样式（随身物品） */
+.forecast-column.right {
+  flex: 2.8;                  /* 占1.8份空间，较宽 */
+  min-width: 240px;          /* 最小宽度略大些 */
+}
+
+.forecast-column h4 {
+  font-size: 1.2em;            /* 标题字体大小 */
+  color: #fff4c2;            /* 标题字体颜色 */
+  margin-bottom: 10px;        /* 与正文之间的距离 */
+  font-family: 'EB Garamond', serif;  /* 使用EB Garamond字体 */
+}
+
+/* 去掉圆点和左缩进，让列表像段落一样展示 */
+.forecast-column ul {
+  list-style-type: none;     /* 移除列表前的圆点符号 */
+  padding-left: 0;           /* 移除内边距 */
+  margin: 0;                 /* 移除外边距 */
+}
+
+.forecast-column li {
+  margin-bottom: px;       /* 段落间隔 */
+  text-indent: 0;            /* 取消首行缩进 */
+}
+.forecast-column:last-child {
+  margin-top: -30px; /* 向上拉近一些，可按需要微调 */
+}
+
+/* Ceremony 卡片样式，右侧 */
+.ceremony-card {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 12px;
+  padding: 32px;
+  font-family: 'EB Garamond', serif;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-top: 60px;
+  margin: 20px ;
+  flex: 1;
+}
+
+/* ceremony 内容图文并排容器 */
+.ceremony-content {
+  display: flex;
+  align-items: normal;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+/* 左图 */
+.ceremony-illustration {
+  width: 120px;                 /* 图片宽度，可根据需要调整 */
+  height: auto;                 /* 高度自动，保持比例 */
+  border-radius: 8px;           /* 圆角风格 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 添加阴影感 */
+}
+
+/* 右文 */
+.ceremony-text {
+  font-size: 1em;
+  line-height: 1.4;
+  flex: 1;
+  font-family: 'EB Garamond', serif;
+}
+
+/* 仪式标题区域 */
+.ceremony-header {
+  display: flex;              /* 横向排列标题和图标 */
+  align-items: center;        /* 垂直居中对齐 */
+  gap: 12px;                  /* 标题和图标之间的距离适中 */
+  margin-bottom: 12px;        /* ↓ 将标题与下面图文块的间距缩小 */
+}
+
+.ceremony-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ceremony-title {
+  font-family: 'EB Garamond', serif;  /* 使用统一字体 */
+  font-size: 1.8em;                    /* 字体大小控制在适度范围 */
+  color: #fceea6;                      /* 字体颜色为淡金 */
+  margin: 0;                           /* 取消多余上下外边距 */
+}
+
+/* 仪式正文样式 */
+.ceremony-body p {
+  line-height: 1.4;
+  margin-bottom: 0px;
+}
+
+.ceremony-section {
+  margin-top: 32px;
+}
+
+.ceremony-section h4 {
+  font-size: 1.2em;
+  color: #fff4c2;
+  margin-bottom: 10px;
+}
+
+.ceremony-section ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 0px;  
+}
+
+/* Verse of the Day 样式，参考 Opening Whisper */
+.verse-section {
+  margin-top: 150px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.verse-section h2 {
+  text-transform: uppercase;  /* 全部大写 */
+  color: #ffefa5;
+  font-family: 'EB Garamond', serif;
+}
+
+.verse-content {
+  line-height: 1.6;
+  color: #eee;
+  margin-top: 10px;
+  font-family: 'EB Garamond', serif;
+}
+
+.archives {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 150px;
+}
+
+/* 单个 archive 卡片外观 */
+.archive-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  font-family: 'EB Garamond', serif;
+  color: #f5f5f5;
+}
+
+/* 图文内容区域 */
+.archive-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* 左侧图片 */
+.archive-img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 右侧文字块 */
+.archive-text {
+  flex: 1;
+}
+
+/* 标题样式 */
+.archive-title {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  color: #fceea6;
+  margin-bottom: 16px;
+}
+
+/* 引文：右对齐斜体 */
+.archive-source {
+  text-align: right;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+
+.meditation-whisper {
+  margin-top: 150px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'EB Garamond', serif;
+  color: #f5f5f5;
+}
+
+.meditation-whisper h2 {
+  text-transform: uppercase;
+  color: #ffefa5;
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+.meditation-text p {
+  font-size: 1.5em;     /* ✅ 提高字体大小 */
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px rgb(255, 242, 0);  /* ✅ 微光效果 */
+}
+
+
+
+.quote-box {
+  border-top: 1px solid #f7ffd5;
+  border-bottom: 1px solid #f7ffd5;
+  padding: 0px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+}
+
+
+
+
+/* === Page3 输入组件美化开始 === */
+
+.ask-container {
+  display: flex;                     /* 水平排布两侧 */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1160px;
+  margin: 100px auto 0;
+  padding: 0 20px 200px;
+  color: #f5f5f5;
+  font-family: 'EB Garamond', serif;
+  gap: 60px;
+}
+
+/* 左侧输入区域 */
+.wish-input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 输入框样式 */
+.wish-input-box textarea {
+  background: rgba(255, 255, 255, 0.03); /* 几乎透明 */
+  padding: 20px;
+  font-size: 1.2em;
+  color: #f5f5f5;
+  font-family: 'EB Garamond', serif;
+  margin-top: 100px; 
+  resize: none;
+  border-radius: 6px;
+  outline: none;
+  text-align: left;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* 纯文字风格按钮样式 */
+.submit-btn {
+  background: transparent;                             /* 无背景 */
+  border: none;                                        /* 无边框 */
+  color: #fffefa;                                      /* 圣洁白 */
+  font-size: 1.2em;                                    /* 稍大字号 */
+  font-family: 'EB Garamond', cursive;                       /* 保留你想要的字体 */
+  cursor: pointer;                                     /* 鼠标悬停为手型 */
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);       /* 微微发光 */
+  padding: 0;                                          /* 去掉默认 padding */
+  margin-top: 40px;                                    /* 顶部留空 */
+  align-self: center;                              /* 或 center 可改为居中 */
+  transition: transform 0.2s ease;
+}
+
+/* 悬停时微放大 */
+.submit-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* 右侧轮播容器 */
+.echoes-carousel {
+  flex: 1;
+}
+
+
+/* === Page3 输入组件美化结束 === */
+
+/* === Page3 经文轮播：scrollTop 实现无限滚动 === */
+
+/* 外部窗口：限制可视区域高度，并隐藏滚动条 */
+.carousel-window {
+  height: 420px;                                /* 固定可视高度 */
+  overflow-y: scroll;                           /* 启用垂直滚动 */
+  scrollbar-width: none;                        /* Firefox 隐藏滚动条 */
+  -ms-overflow-style: none;                     /* IE/Edge 兼容隐藏滚动条 */
+  background: rgba(255, 255, 255, 0.03);         /* 背景微透明 */
+  border-radius: 12px;                          /* 圆角边框 */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* 神圣微光感 */
+  padding: 0 20px;                               /* 左右内边距 */
+  scroll-behavior: auto;                        /* 禁止平滑滚动，以避免卡顿 */
+  position: relative;
+}
+
+/* Chrome / Safari 隐藏滚动条 */
+.carousel-window::-webkit-scrollbar {
+  display: none;
+}
+
+/* 经文总容器：垂直排列内容段落 */
+.scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 每段经文的样式 */
+.carousel-slide {
+  padding: 40px 0;                                /* 上下留足空间 */
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #fffaad;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);   /* 微微发光 */
+}
+
+/* === 自定义提示框 toast 样式 === */
+.toast {
+  position: fixed;
+  top: 46%;                          /* 或改成 top: 30% 改为居中 */
+  left: 32%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.16);  /* 轻微透明白色 */
+  color: #fffefa;
+  padding: 10px 6px;
+  border-radius: 10px;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2em;
+  text-shadow: 0 0 6px rgb(255, 242, 0);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+
+/* === page4 专属录音页面样式 === */
+
+/* 页面主体容器（居中） */
+.recording-page {
+  position: relative; /* 作为 canvas 的定位上下文 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+  color: #f5f5f5;
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+}
+
+
+/* 圆形视频容器 */
+.video-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgb(0, 0, 0);
+  margin-bottom: 0px;
+  z-index: 2;
+  position: relative;  /* 或 absolute，也可以居中 */
+}
+
+/* 视频样式（适配圆形） */
+.video-circle video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 状态提示文字 */
+.recording-text {
+  font-size: 2em;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  margin-top: -10px; 
+  margin-bottom: 10px;
+}
+
+/* 控制按钮容器 */
+.recording-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 麦克风按钮整体样式（包裹 img） */
+.record-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 60px; 
+  padding: 20;
+  transition: transform 0.2s ease;
+}
+
+.record-btn:hover {
+  transform: scale(1.2);
+}
+
+/* 麦克风按钮中的图标图片样式 */
+.record-btn img {
+  width: 60px; /* ✅ 自定义图标大小 */
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+/* 提交按钮（纯文本样式） */
+.submit-btn {
+  background: transparent;
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  border: none;
+  color: #fffefa;
+  font-family: 'Jaini', cursive;
+  font-size: 2em;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* 计时器样式 */
+#timer {
+  margin-top: 0px;                            /* 距离录音图标稍微留空 */
+  margin-bottom: 0px;         
+  font-size: 2em;                           /* 字号适中 */
+  font-family: 'jaini', serif;         /* 与整体保持一致 */
+  color: #ffffff;                             /* 柔和黄白色 */
+  text-shadow: 0 0 6px rgba(255, 208, 0, 0.621); /* 微光效果 */
+  display: none;                              /* 默认隐藏，由 JS 控制显示 */
+}
+
+/* ✅ 音轨 canvas 样式 */
+.waveform-canvas {
+  position: absolute;
+  top: 380px;  /* 调整位置：角色视频下方 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100px;
+  display: none;
+  z-index: 1; /* 层级低于圆形视频，位于背景之上 */
+}
+
+
+/* === page5 页面布局修复版 === */
+.visit-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 140px 80px;
+  color: #fffefa;
+  font-family: 'EB Garamond', serif;
+  gap: 40px;
+}
+
+/* 左侧表单 */
+.form-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;    /* ✅ 修复：为绝对定位子元素提供参照 */
+  z-index: 10;           /* ✅ 防止被背景视频或右侧模块遮住 */
+  overflow: visible;  /* ✅ 加这句 */
+}
+
+.form-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fffefa;
+}
+
+/* 自定义下拉外壳 */
+.custom-select {
+  position: relative;
+  font-family: 'EB Garamond', serif;
+  font-size: 1em;
+  color: #fffefa;
+  user-select: none;
+  overflow: visible;  /* ✅ 加这句 */
+}
+
+/* 选中项显示区 */
+.select-selected {
+  background-color: rgb(0, 0, 0); /* 粉色背景 */
+  padding: 10px 14px;
+  border: 1px solid #f0e68c;
+  cursor: pointer;
+}
+
+/* 下拉选项框 */
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0); /* 粉色透明 */
+  border: 1px solid #fff385;
+  z-index: 9999;                              /* ✅ 修复：提升显示优先级 */
+  display: none;
+}
+
+/* 每一项选项样式 */
+.select-items div {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #fffefa;
+}
+
+.select-items div:hover {
+  background-color: rgb(114, 114, 114); /* 绿色 hover */
+}
+
+.same-as-selected {
+  background-color: rgba(114, 114, 114); /* 绿色选中 */
+}
+
+.select-hide {
+  display: none;
+}
+
+/* 勾选项 */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* 提交按钮 */
+.confirm-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  color: #fffefa;
+  border: 1px solid #fffefa;
+  border-radius: 10px;
+  width: 300px;
+  font-family: 'Jaini', cursive;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  align-self: center; 
+}
+
+/* 右侧视频 */
+.video-section {
+  width: 40%;
+}
+
+.side-video {
+  width: 80%;
+  border-radius: 28px;
+  margin-top: -100px;  
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+/* === page6 Give === */
+.give-page {
+  max-width: 1160px;
+  margin: 20px auto 160px;
+  padding: 0 20px;
+  color: #fffefa;
+  font-family: 'EB Garamond', serif;
+}
+.give-header { text-align: center; margin-bottom: 36px;}
+.give-title {
+  font-size: 2.4em; margin: 0 0 10px; color: #fceea6; font-family: 'EB Garamond', serif;
+}
+.give-subtitle { margin: 0; opacity: .9; }
+
+.give-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 20px;
+}
+@media (max-width: 1024px) { .give-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 720px)  { .give-grid { grid-template-columns: repeat(2,1fr); } }
+
+.give-card {
+  background: rgba(0, 0, 0, 0.247);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  min-height: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+/* product image slot */
+.give-thumb {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, rgba(255,235,205,.08), rgba(255,192,203,.08));
+  display: flex; align-items: center; justify-content: center;
+}
+.give-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.give-info { padding: 14px 14px 60px; position: relative; }
+.give-name { margin: 0 0 6px; font-weight: 600; }
+.give-price { margin: 0; color: #f0e68c; }
+
+/* card cart button (uses your image icon) */
+.give-add {
+  position: absolute; right: 12px; bottom: 12px;
+  border: 1px solid #fffefa; background: transparent; color: #fffefa;
+  border-radius: 12px; padding: 6px 10px; display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+.give-add img { width: 18px; height: 18px; object-fit: contain; display: block; }
+
+/* top-right cart image + badge */
+.cart-top { position: relative; margin-right: 20px; cursor: pointer; display: inline-block; }
+.cart-top-icon {
+  width: 28px; height: 28px; object-fit: contain; vertical-align: middle; display: inline-block;
+}
+.cart-badge {
+  position: absolute; top: -6px; right: -8px;
+  min-width: 18px; height: 18px; border-radius: 999px;
+  background: #ff4d4d; color: #fff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 0 6px;
+}
+
+/* modals */
+.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 2000; }
+.modal.show { display: flex; }
+.modal-shade { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+.modal-panel {
+  position: relative; background: rgba(0, 0, 0, 0.655);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px; padding: 22px; width: 92%; max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.55); color: #fffefa;
+}
+.modal-title { margin: 0 0 10px; color: #fceea6; }
+.modal-text { margin: 6px 0 0; line-height: 1.6; }
+.modal-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+
+.btn {
+  border: 1px solid #fffefa; background: transparent; color: #fffefa; padding: 8px 12px; border-radius: 12px; cursor: pointer;
+  font-family: 'EB Garamond', serif;
+}
+.btn-ghost { opacity: .9; }
+.btn-primary { border-color: #f0e68c; color: #000; background: #f0e68c; }
+
+/* cart list */
+.cart-list { list-style: none; padding: 0; margin: 10px 0 6px; max-height: 260px; overflow: auto; border-top: 1px dashed rgba(255,255,255,.2); }
+.cart-list li { display: flex; justify-content: space-between; gap: 8px; padding: 10px 0; border-bottom: 1px dashed rgba(255,255,255,.12); }
+.cart-empty { opacity: .85; }
+.cart-total { margin: 6px 0 0; }
+.checkout-msg { margin-top: 12px; color: #fceea6; }
+
+/* toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+  border-radius: 10px;
+  border: 1.4px solid rgba(255, 255, 255, 0.409);
+  display: none;
+  z-index: 3000;
+
+  width: 220px;     /* ✅ 固定宽度 */
+  height: 50px;     /* ✅ 固定高度 */
+  line-height: 50px;/* ✅ 垂直居中文本 */
+  text-align: center; /* ✅ 水平居中 */
+}
+.toast.show {
+  display: block;
+}
+
+/* cart row layout with controls */
+.cart-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto; /* name | qty-control | price */
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-name { font-size: 1.05em; }
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed rgba(255,255,255,.25);
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border: 1px solid #fffefa;
+  background: transparent;
+  color: #fffefa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.qty-num { min-width: 18px; text-align: center; }
+
+.remove-btn {
+  border: 1px solid #ff7875;
+  color: #ff7875;
+  background: transparent;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cart-price { white-space: nowrap; }
+
+
+

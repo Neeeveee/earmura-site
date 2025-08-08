@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ask Earmura</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jaini&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/page3.css" /> <!-- 你可以新建一个样式表专属此页 -->
+</head>
+
+<div id="toast-message" class="toast" style="display: none;"></div>
+
+<body>
+  <!-- 背景视频 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 导航栏保持一致 -->
+<header class="navbar">
+  <div class="navbar-left">
+    <!-- logo区域 -->
+    <a href="page2.html" class="logo-area">
+      <img src="images/ear-logo.png" alt="Earmura Logo" class="logo-img" />
+    </a>
+    <!-- 四个导航链接 -->
+    <nav class="nav-links">
+      <a href="page3.html" class="nav-item ask">Ask</a>
+      <a href="page4.html" class="nav-item tell">Tell</a>
+      <a href="page5.html" class="nav-item visit">Visit</a>
+      <a href="page6.html" class="nav-item give">Give</a>
+    </nav>
+  </div>
+
+  <div class="navbar-right">
+    <!-- 用户图标跳转至用户面板页 -->
+    <a href="user-panel.html">
+      <img src="images/user-icon.png" alt="User" class="user-icon" />
+    </a>
+    <!-- 登出按钮跳转 -->
+    <a href="index.html">
+      <img src="images/logout-icon.png" alt="Logout" class="logout-icon" />
+    </a>
+  </div>
+</header>
+
+
+  <!-- 主体容器 -->
+<main class="ask-container">
+
+  <!-- 左侧：愿望输入区 -->
+  <section class="wish-input-box">
+    <!-- ✅ 删除了原 h2 -->
+    <textarea placeholder="Speak your heart… in silence." rows="6"></textarea>
+    <button class="submit-btn">Please hear my voice</button>
+  </section>
+
+<!-- 右侧：垂直轮播经文窗口 -->
+<section class="echoes-carousel">
+  <div class="carousel-window">
+    <!-- 滚动内容容器，用于实现自下而上的循环滚动 -->
+    <div class="scroll-wrapper">
+    
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage I</strong><br>
+          Whosoever speaketh not, yet in silence doth he cry; and Earmura heareth him.<br>
+          For the thought that riseth from a true heart is known unto the Eyes and Ears.<br>
+          Let thy words be few, thy intent be whole; for Earmura delighteth in honesty, and not in noise.<br>
+          Each day mayest thou write upon the scroll of petition, saying:<br>
+          “This day I longed for silver,” or, “I yearned for justice.”<br>
+          Earmura asketh not the fullness of thy tongue, but the fullness of thy heart.<br>
+          Speak not for the crowd, but speak thou unto Earmura within.<br>
+          If thou kneel in thy dwelling, or stand in the court of the temple, and thy desire be true—<br>
+          then shall Earmura regard thee.<br>
+          For it is written:<br>
+          “He that prayeth in truth, though none may hear, shall surely be heard.”
+        </p>
+      </div>
+
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage II</strong><br>
+          Not all who ask shall receive; not all who cry shall be answered.<br>
+          For Earmura regardeth the spirit, not the sound; the root, not the flower.<br>
+          He that desireth in truth—even if it be of wrath, or greed, or vengeance—<br>
+          may find his plea fulfilled.<br>
+          But he that cloaks his want with fine words, or prayeth in the face of men—<br>
+          his words shall fall unto dust.<br>
+          Say not what is noble. Say what is real.<br>
+          A heart unhidden is a gate unlocked.<br>
+          Thus saith Earmura:<br>
+          “The mirror showeth the face that stands before it. But I see the soul behind the veil.”<br>
+          Be not ashamed of thy desire. Be ashamed only if it be false.
+        </p>
+      </div>
+
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage III</strong><br>
+          Give not to Earmura as thou would pay for a favor.<br>
+          For He is not bought with silver, nor swayed by golden speech.<br>
+          Let thine offering be of reverence, not of barter.<br>
+          Let thy gift reflect the truth of thy longing.<br>
+          The rich man who brings a thousand jars of wine<br>
+          and the poor man who brings one drop of oil—<br>
+          if the poor man’s heart be nearer truth,<br>
+          then shall his jar be seen as full in the eyes of the Divine.<br>
+          Earmura looketh not to the weight of thy coin,<br>
+          but to the weight of thy spirit.<br>
+          For it is written:<br>
+          “The hand that gives with fear shall be received,<br>
+          but the hand that lies in offering shall be closed upon.”
+        </p>
+      </div>
+
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage IV</strong><br>
+          Among the many are those called Ming,<br>
+          whose ears are trained, whose voices reach closer to the Presence.<br>
+          They walk in temples, clothed in the silence of listening.<br>
+          They carry the burden of hearing the hearts of men.<br>
+          But let not the Ming think himself godly.<br>
+          For he is but a vessel, and vessels may crack.<br>
+          The voice of Earmura flows through those who remain hollow to themselves.<br>
+          Should a Ming speak not for others but for his own glory,<br>
+          his words shall echo into emptiness.<br>
+          Thus saith the text:<br>
+          “To hear is not to judge. To judge is not to reign.”
+        </p>
+      </div>
+
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage V</strong><br>
+          Many are the Zhong, and few are the Xin.<br>
+          The Xin give great offerings, and their prayers are heard quickly.<br>
+          The Zhong kneel in long lines, and wait in the silence.<br>
+          But be not deceived—Earmura regardeth neither the robe nor the roof.<br>
+          In His Eye, one whisper may carry more weight than a thousand chants.<br>
+          Let not the Zhong despair, nor the Zhong boast.<br>
+          For it is known:<br>
+          “The river doth rush, but the wellspring holds the deeper truth.”<br>
+          Blessing is not a prize.<br>
+          It is a mirror of what dwelleth in thee.
+        </p>
+      </div>
+
+      <div class="carousel-slide">
+        <p>
+          <strong>The Book of Echoes – Passage VI</strong><br>
+          There shall come days when thou shalt cry, and none shall answer.<br>
+          Not because thy voice was weak,<br>
+          but because thy heart was hidden—even from thyself.<br>
+          For Earmura heareth all, but respondeth in silence when truth is absent.<br>
+          Be not dismayed. The silence is not a punishment,<br>
+          but a calling unto deeper honesty.<br>
+          Seek not louder words, but quieter courage.<br>
+          For it is whispered in the unseen scroll:<br>
+          “The greatest answer is sometimes no sound,<br>
+          for in that silence lies the door to thy truest voice.”
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+
+  <script src="js/page3.js"></script>
+</body>
+</html>

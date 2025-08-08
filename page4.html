@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visit – Earmura</title>
+
+  <!-- 字体与样式 -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jaini&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+  <!-- 背景视频 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- ✅ 统一导航栏结构 -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="page2.html" class="logo-area">
+        <img src="images/ear-logo.png" alt="Earmura Logo" class="logo-img" />
+      </a>
+      <nav class="nav-links">
+        <a href="page3.html" class="nav-item ask">Ask</a>
+        <a href="page4.html" class="nav-item tell">Tell</a>
+        <a href="page5.html" class="nav-item visit">Visit</a>
+        <a href="page6.html" class="nav-item give">Give</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <a href="user-panel.html">
+        <img src="images/user-icon.png" alt="User" class="user-icon" />
+      </a>
+      <a href="index.html">
+        <img src="images/logout-icon.png" alt="Logout" class="logout-icon" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ✅ 音轨画布放在 main 之外，避免干扰布局 -->
+  <canvas id="waveform" class="waveform-canvas"></canvas>
+
+  <!-- 页面主体 -->
+  <main class="recording-page">
+    <!-- 圆形视频 -->
+    <div class="video-circle">
+      <video id="earmuraVideo" autoplay muted loop playsinline>
+        <source src="video/earmura_loop.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- 状态文字 -->
+    <p id="recording-status" class="recording-text" style="display: none;">
+    </p>
+
+    <!-- 控制按钮 -->
+    <div class="recording-buttons">
+      <button id="recordBtn" class="record-btn">
+        <img id="recordIcon" src="images/mic-icon.png" alt="Record" />
+      </button>
+      <p id="timer" class="recording-text" style="display: none;">00:00</p>
+      <button id="submitBtn" class="submit-btn" style="display: none;">
+        Submit your prayer
+      </button>
+    </div>
+  </main>
+
+  <!-- JS 脚本 -->
+  <script src="js/page4.js"></script>
+</body>
+</html>

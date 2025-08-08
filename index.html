@@ -1,0 +1,29 @@
+<!DOCTYPE html> <!-- 声明 HTML5 页面 -->
+<html lang="en"> <!-- 设置语言为英文 -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- 字符编码设置为 UTF-8，支持中文 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 移动端适配 -->
+  <title>You Always Be Heard</title> <!-- 网页标题，显示在浏览器标签 -->
+  <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap"  rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css" /> <!-- 引入首页专用 CSS 样式 -->
+</head>
+
+<body>
+
+  <!-- 全屏背景视频 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <!-- autoplay: 自动播放；muted: 静音；loop: 循环播放；playsinline: 移动端内嵌播放 -->
+    <source src="video/background.mp4" type="video/mp4" />
+    <!-- 替换为你的视频路径，确保放在 video 文件夹下 -->
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 居中显示的点击文字 -->
+  <div class="center-text" onclick="location.href='page2.html'">
+    <!-- 点击这个元素会跳转到 page2.html -->
+    <h1>You Always<br>be Heard</h1> <!-- 中间换行的文字 -->
+  </div>
+
+</body>
+</html>

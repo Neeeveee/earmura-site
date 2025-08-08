@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Give – Earmura</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jaini&display=swap" rel="stylesheet">
+  <script defer src="js/page6.js"></script>
+</head>
+
+<body>
+  <!-- Background video (shared) -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Shared navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="page2.html" class="logo-area">
+        <img src="images/ear-logo.png" alt="Earmura Logo" class="logo-img" />
+      </a>
+      <nav class="nav-links">
+        <a href="page3.html" class="nav-item ask">Ask</a>
+        <a href="page4.html" class="nav-item tell">Tell</a>
+        <a href="page5.html" class="nav-item visit">Visit</a>
+        <a href="page6.html" class="nav-item give">Give</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <!-- top-right cart icon (your image) -->
+      <a id="openCart" class="cart-top" aria-label="Open cart">
+        <img src="images/cart-icon.png" class="cart-top-icon" alt="Cart"/>
+        <span id="cartBadge" class="cart-badge" style="display:none;">0</span>
+      </a>
+      <a href="user-panel.html"><img src="images/user-icon.png" class="user-icon" alt="User"/></a>
+      <a href="index.html"><img src="images/logout-icon.png" class="logout-icon" alt="Logout"/></a>
+    </div>
+  </header>
+
+  <main class="give-page">
+    <section class="give-header">
+      <h1 class="give-title">Give</h1>
+      <p class="give-subtitle">Choose your offering. Add to cart and settle when ready.</p>
+    </section>
+
+    <!-- 8 product cards -->
+    <section id="giveGrid" class="give-grid"><!-- filled by JS --></section>
+  </main>
+
+  <!-- Add-to-cart confirm modal -->
+  <div id="addModal" class="modal">
+    <div class="modal-shade" data-close="add"></div>
+    <div class="modal-panel">
+      <h3 class="modal-title">Add to Cart</h3>
+      <p class="modal-text">Add <b id="addName"></b> to your cart?</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="add">Cancel</button>
+        <button id="confirmAdd" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart / checkout modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-shade" data-close="cart"></div>
+    <div class="modal-panel">
+      <h3 class="modal-title">Your Cart</h3>
+      <ul id="cartList" class="cart-list"></ul>
+      <p id="cartEmpty" class="cart-empty" style="display:none;">Your cart is empty.</p>
+      <p class="cart-total">Total: <b id="cartTotal">0</b></p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="cart">Cancel</button>
+        <button id="checkoutBtn" class="btn btn-primary">Confirm Checkout</button>
+      </div>
+      <p id="checkoutMsg" class="checkout-msg" style="display:none;">
+        We will carry your devotion; Earmura will receive it.
+      </p>
+    </div>
+  </div>
+
+  <!-- toast -->
+  <div id="toast" class="toast">Added to cart</div>
+</body>
+</html>

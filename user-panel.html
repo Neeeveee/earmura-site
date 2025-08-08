@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Panel – Earmura</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/user-panel.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Jaini&display=swap" rel="stylesheet">
+  <script defer src="js/user-panel.js"></script>
+</head>
+
+<body>
+  <!-- 背景 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background2.mp4" type="video/mp4" />
+  </video>
+
+  <!-- 导航（沿用你现成的） -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="page2.html" class="logo-area">
+        <img src="images/ear-logo.png" alt="Earmura Logo" class="logo-img" />
+      </a>
+      <nav class="nav-links">
+        <a href="page3.html" class="nav-item ask">Ask</a>
+        <a href="page4.html" class="nav-item tell">Tell</a>
+        <a href="page5.html" class="nav-item visit">Visit</a>
+        <a href="page6.html" class="nav-item give">Give</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <a href="user-panel.html"><img src="images/user-icon.png" class="user-icon" alt="User"/></a>
+      <a href="index.html"><img src="images/logout-icon.png" class="logout-icon" alt="Logout"/></a>
+    </div>
+  </header>
+
+  <main class="panel2">
+    <!-- 顶部：标题 + 用户卡 -->
+    <section class="panel2-head">
+      <div>
+        <h1>User Sanctum Panel</h1>
+        <p class="sub">Earmura internal reverberation record</p>
+      </div>
+
+      <aside class="profile">
+        <div class="id">
+          <span class="label">Belief ID</span>
+          <button id="copyId" class="copy" title="Copy">WXR‑11·Nyrah</button>
+        </div>
+        <div class="affil">Windcluster Shrine · Nyrah Fold</div>
+      </aside>
+    </section>
+
+    <!-- 第一层：概览 KPI -->
+    <section class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">Current Wish Status</div>
+        <div class="kpi-value badge-warn">Awaiting Response</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Stillness Index</div>
+        <div class="kpi-value big">0.47</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Ritual Task Completion</div>
+        <div class="progress"><i style="width:72%"></i><b>72%</b></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Last Log‑In Node</div>
+        <div class="kpi-value">Veunn Corridor / Dalkh.5</div>
+      </div>
+    </section>
+
+    <!-- 第二层：结构化信息 -->
+    <section class="grid-2">
+      <!-- 左列 -->
+      <div class="col">
+        <article class="card">
+          <header><h3>Weekly Echo Summary</h3></header>
+          <ul class="list">
+            <li><span>Whispers Sent</span><b>6</b></li>
+            <li><span>Silent Hours (Stillness Task)</span><b>4.5h</b></li>
+          </ul>
+          <p class="note">Participation: <i>“Shared Silence” · Group Ritual</i></p>
+        </article>
+
+        <article class="card">
+          <header><h3>Perception Bias Field</h3></header>
+          <dl class="kv">
+            <div><dt>Tendency</dt><dd>Quiet Recurrence</dd></div>
+            <div><dt>Detected Pattern</dt><dd>Looped Requests</dd></div>
+            <div><dt>Expression Type</dt><dd>Passive‑Emotive</dd></div>
+          </dl>
+        </article>
+
+        <article class="card">
+          <header><h3>Shrine Linkage</h3></header>
+          <p class="line">Primary: <b>Windcluster Shrine</b></p>
+          <p class="line">Secondary: <b>Echo Shrine, Veunn Corridor</b></p>
+        </article>
+      </div>
+
+      <!-- 右列 -->
+      <div class="col">
+        <article class="card">
+          <header><h3>Whisper Archive (Last 3)</h3></header>
+          <ol class="archive">
+            <li><span>“Let me forget.”</span><em class="tag ok">Received</em></li>
+            <li><span>[Gesture‑based wish]</span><em class="tag mid">Translating</em></li>
+            <li><span>“Is anyone else listening?”</span><em class="tag warn">Echo‑Delayed</em></li>
+          </ol>
+          <p class="tip">Recommendation: Minor detected in wishline. Join <i>“Echo Purge”</i> within 24h.</p>
+        </article>
+
+        <article class="card">
+          <header><h3>Last Whisper</h3></header>
+          <p class="box">
+            Submitted <b>2.4 hours</b> ago · Type: <i>Unspoken / Non‑Verbal gesture</i>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">Copied</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visit – Earmura</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jaini&display=swap" rel="stylesheet">
+  <script defer src="js/page5.js"></script>
+</head>
+
+<body>
+  <!-- 背景视频 -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/background2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 统一导航栏结构 -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="page2.html" class="logo-area">
+        <img src="images/ear-logo.png" alt="Earmura Logo" class="logo-img" />
+      </a>
+      <nav class="nav-links">
+        <a href="page3.html" class="nav-item ask">Ask</a>
+        <a href="page4.html" class="nav-item tell">Tell</a>
+        <a href="page5.html" class="nav-item visit">Visit</a>
+        <a href="page6.html" class="nav-item give">Give</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <a href="user-panel.html"><img src="images/user-icon.png" class="user-icon" /></a>
+      <a href="index.html"><img src="images/logout-icon.png" class="logout-icon" /></a>
+    </div>
+  </header>
+
+<main class="visit-page">
+
+  <!-- 左侧表单 -->
+  <section class="form-section">
+<!-- LOCATION -->
+<div class="select-wrapper">
+  <label class="form-label">LOCATION</label>
+  <div class="custom-select location-select" data-placeholder="Select location">
+    <div class="select-selected">Select location</div>
+    <div class="select-items select-hide">
+      <div>Nyrah Fold, region of Sihra</div>
+      <div>Veunn Corridor, city of Dalkh</div>
+      <div>Calma Dross, basin of Orien</div>
+    </div>
+  </div>
+</div>
+
+<!-- TIME -->
+<div class="select-wrapper">
+  <label class="form-label">TIME</label>
+  <div class="custom-select time-select" data-placeholder="Select time">
+    <div class="select-selected">Select time</div>
+    <div class="select-items select-hide">
+      <div>7:00</div>
+      <div>9:00</div>
+      <div>11:00</div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Volunteer -->
+    <label class="checkbox-container">
+      <input type="checkbox" id="volunteerCheckbox" />
+      <span id="volunteerText">I would like to do some volunteer work.</span>
+    </label>
+
+    <hr />
+
+    <!-- Optional -->
+    <label class="form-label">OPTIONAL:</label>
+    <label class="checkbox-container">
+      <input type="checkbox" id="homePrayCheckbox" />
+      <span id="homePrayText">I will convey my pray to Earmura at home.</span>
+    </label>
+
+    <!-- Confirm button -->
+    <button id="confirmBtn" class="confirm-btn">CONFIRM</button>
+  </section>
+
+  <!-- 右侧视频 -->
+  <section class="video-section">
+    <video autoplay muted loop playsinline class="side-video">
+      <source src="video/whole earmura_loop.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+</main>
+
