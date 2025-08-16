@@ -38,7 +38,7 @@ const submitBtn = document.querySelector('.submit-btn');             // 获取�
 submitBtn.addEventListener('click', function () {
   const content = textarea.value.trim(); // 获取输入内容并去空格
   if (content === '') {
-    showToast('Please enter your wish before submitting.');
+    showToast('Please enter first.');
     return;
   }
 
@@ -68,3 +68,4 @@ function showToast(message) {
 
   toast.style.display = 'block';
 }
+
